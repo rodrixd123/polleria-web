@@ -13,7 +13,7 @@ export interface Category {
   items: MenuItem[];
 }
 
-export const phoneWhatsApp = "51999999999"; // Reemplazar por el número real de la pollería
+export const phoneWhatsApp = "51968765878"; // Reemplazar por el número real de la pollería
 
 export const menuData: Category[] = [
   {

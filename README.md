@@ -1,43 +1,78 @@
-# Astro Starter Kit: Minimal
+# 🍗 Pollería El Sabor — Landing Web Oficial
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Sitio web profesional, de alto rendimiento y completamente *responsive* diseñado para **Pollería El Sabor** (ubicada en Lurín, Lima). Desarrollado con **Astro** y **Tailwind CSS**, enfocado en la conversión directa para pedidos de recojo en tienda (*takeaway*) mediante integración continua con **WhatsApp**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 Características Principales
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Carga Ultrarrápida:** Construido sobre Astro para ofrecer tiempos de carga inmediatos y excelente SEO local.
+- **Diseño Responsive & Warm Dark Mode:** Interfaz adaptada a dispositivos móviles con una paleta de colores cálida y profesional inspirada en el concepto de brasero peruano.
+- **Carta Virtual Dinámica:** Menú organizado por categorías reales de pollería (Combos Familiares, Mostritos, Platos Personales y Guarniciones/Bebidas).
+- **Integración con WhatsApp:** Call-To-Action fijos y flotantes optimizados para enviar pedidos directos al chat del negocio con mensajes preconfigurados.
+- **Geolocalización:** Integración directa con Google Maps para ubicar fácilmente el local en Lurín y revisar horarios de atención.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Framework:** [Astro](https://astro.build/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Tipografías:** Google Fonts (`Outfit` & `Plus Jakarta Sans`)
+- **Lenguaje:** TypeScript / JavaScript
+
+---
+
+## 💻 Desarrollo Local
+
+Para ejecutar el proyecto en tu entorno local:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/rodrixd123/polleria-web.git](https://github.com/rodrixd123/polleria-web.git)
+   cd polleria-web
+   ```
+
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador para ver el resultado.
+
+---
+
+## 📁 Estructura del Proyecto
 
 ```text
 /
 ├── public/
+│   └── images/          # Fotografías de platos y recursos estáticos
 ├── src/
+│   ├── data/
+│   │   └── menu.ts      # Estructura de datos de la carta y WhatsApp
+│   ├── layouts/
+│   │   └── Layout.astro # Estructura HTML base y tipografías
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── index.astro  # Landing page principal
+├── package.json
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## ⚙️ Configuración para Producción
 
-Any static assets, like images, can be placed in the `public/` directory.
+Para personalizar los datos antes del despliegue final:
+- **Número de WhatsApp:** Modificar la variable `phoneWhatsApp` en `src/data/menu.ts`.
+- **Platos y Precios:** Actualizar el arreglo `menuData` en `src/data/menu.ts`.
+- **Imágenes:** Reemplazar o añadir los archivos dentro de la carpeta `public/images/`.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© Pollería El Sabor — Todos los derechos reservados.
