@@ -1,16 +1,274 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { menuData, phoneWhatsApp } from '../data/menu';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Pollería El Sabor | Sabor Tradicional a la Brasa">
+  <!-- Top Bar Informativa -->
+  <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-stone-950 text-xs md:text-sm font-black py-2.5 px-4 text-center tracking-wide shadow-inner">
+    ⚡ RECOJO EN TIENDA | ATENDEMOS DE LUNES A DOMINGO DE 12:00 PM A 10:00 PM
+  </div>
+
+  <!-- Navbar Flotante con Glassmorphism -->
+  <nav class="sticky top-0 z-40 bg-stone-950/90 backdrop-blur-md border-b border-stone-800 shadow-xl transition-all">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="text-2xl animate-pulse">🔥</span>
+        <span class="font-black text-xl md:text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors" style="font-family: 'Outfit', sans-serif;">
+          EL SABOR <span class="bg-red-600 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md ml-1 tracking-widest">Pollería</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-extrabold text-stone-300">
+        <a href="#carta" class="hover:text-amber-400 transition-colors">La Carta</a>
+        <a href="#nosotros" class="hover:text-amber-400 transition-colors">Nosotros</a>
+        <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Ubicación</a>
+      </div>
+
+      <!-- BOTÓN 1 DE WHATSAPP -->
+      <a 
+        href={`https://wa.me/${phoneWhatsApp}?text=${encodeURIComponent('¡Hola! Quisiera realizar un pedido para recoger en tienda.')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs md:text-sm py-2.5 px-5 rounded-full shadow-lg shadow-emerald-950/50 transition-all hover:scale-105 flex items-center gap-2 border border-emerald-400/30"
+      >
+        <span>Pide para llevar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section con Estética Warm Dark Mode -->
+  <header class="relative bg-stone-950 text-white overflow-hidden py-20 md:py-32 px-4 border-b border-stone-800">
+    <!-- Efecto ambiental de Brasero -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-700/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+      <div class="inline-flex items-center gap-2 bg-stone-900 border border-amber-500/30 px-4 py-1.5 rounded-full text-amber-400 font-extrabold text-xs tracking-widest uppercase shadow-xl">
+        <span>⭐ Tradición Peruana a la Leña</span>
+      </div>
+
+      <h1 class="text-4xl md:text-7xl font-black tracking-tight text-white leading-none" style="font-family: 'Outfit', sans-serif;">
+        EL VERDADERO SABOR <br />
+        <span class="bg-gradient-to-r from-red-500 via-amber-400 to-amber-300 bg-clip-text text-transparent drop-shadow-md">
+          CRUJIENTE Y JUGOSO
+        </span>
+      </h1>
+
+      <p class="text-stone-300 text-base md:text-xl max-w-2xl mx-auto font-normal leading-relaxed">
+        Pollo macerado con especias autóctonas, horneado a la perfección con papas amarillas crocantes y las infaltables cremas caseras.
+      </p>
+
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a 
+          href="#carta" 
+          class="bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-stone-950 font-black text-base py-4 px-9 rounded-full shadow-xl shadow-amber-500/20 transition-all hover:scale-105"
+        >
+          VER LA CARTA VIRTUAL 📜
+        </a>
+        <a 
+          href="#ubicacion" 
+          class="bg-stone-900 hover:bg-stone-800 text-stone-200 font-bold text-base py-4 px-9 rounded-full border border-stone-700 transition-all hover:border-amber-400/50"
+        >
+          📍 DÓNDE ESTAMOS
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección "Quiénes Somos / Atributos del Plato" -->
+  <section id="nosotros" class="py-20 bg-stone-900/80 border-b border-stone-800 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <span class="bg-red-950 border border-red-800 text-red-400 text-xs font-black uppercase tracking-widest px-3.5 py-1 rounded-full">
+          Tradición & Calidad
+        </span>
+        <h2 class="text-3xl md:text-4xl font-black text-white leading-tight" style="font-family: 'Outfit', sans-serif;">
+          El secreto de nuestro pollo a la brasa
+        </h2>
+        <p class="text-stone-300 leading-relaxed text-sm md:text-base">
+          Maceramos nuestro pollo con hierbas aromáticas seleccionadas y lo cocinamos al punto exacto para lograr la combinación perfecta: piel dorada crocante y carne suave e irresistible.
+        </p>
+
+        <!-- Bloques de atributos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="bg-stone-950 p-4 rounded-2xl border border-stone-800 shadow-md">
+            <span class="text-2xl">🔥</span>
+            <h4 class="font-extrabold text-white text-base mt-1">Sabor a la Leña</h4>
+            <p class="text-xs text-stone-400 mt-1">Dorado homogéneo con piel crujiente y jugosidad intacta.</p>
+          </div>
+          <div class="bg-stone-950 p-4 rounded-2xl border border-stone-800 shadow-md">
+            <span class="text-2xl">🍟</span>
+            <h4 class="font-extrabold text-white text-base mt-1">Papas Crocantes</h4>
+            <p class="text-xs text-stone-400 mt-1">Papas fritas al estilo tradicional, doradas al momento.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen promocional -->
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-red-600 via-amber-500 to-red-600 rounded-3xl blur-md opacity-30 group-hover:opacity-50 transition duration-500"></div>
+        <div class="relative rounded-2xl overflow-hidden border border-stone-700 shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80" 
+            alt="Pollo a la brasa dorado" 
+            class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-700"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carta Virtual Estilizada -->
+  <main id="carta" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="text-amber-400 font-extrabold text-xs uppercase tracking-widest bg-amber-400/10 px-3.5 py-1.5 rounded-full border border-amber-400/20">
+        Elige tus favoritos
+      </span>
+      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight" style="font-family: 'Outfit', sans-serif;">
+        NUESTRA CARTA
+      </h2>
+      <p class="text-stone-400 text-sm md:text-base">Revisa nuestras opciones, pide por WhatsApp y retira directamente en tienda sin demoras.</p>
+    </div>
+
+    {menuData.map((category) => (
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8 border-b border-stone-800 pb-3">
+          <div class="h-8 w-2 bg-red-600 rounded-full"></div>
+          <h3 class="text-2xl md:text-3xl font-black text-white tracking-tight" style="font-family: 'Outfit', sans-serif;">
+            {category.name}
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {category.items.map((item) => (
+            <div class="bg-stone-900 rounded-3xl overflow-hidden border border-stone-800/80 shadow-xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group">
+              <div class="relative overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.name} 
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                {item.badge && (
+                  <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    {item.badge}
+                  </span>
+                )}
+                <div class="absolute bottom-4 right-4 bg-stone-950/95 text-amber-400 font-black text-xl px-4 py-1.5 rounded-2xl shadow-xl border border-amber-400/30 backdrop-blur-md">
+                  S/ {item.price.toFixed(2)}
+                </div>
+              </div>
+
+              <div class="p-6 space-y-2">
+                <h4 class="font-extrabold text-xl text-white group-hover:text-amber-400 transition-colors">{item.name}</h4>
+                <p class="text-stone-400 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+
+  <!-- Banner Informativo de Recojo -->
+  <section class="bg-gradient-to-r from-red-950 via-stone-900 to-red-950 border-y border-red-900/40 py-12 px-4 text-center">
+    <div class="max-w-3xl mx-auto space-y-2">
+      <h3 class="text-2xl md:text-3xl font-black text-amber-400" style="font-family: 'Outfit', sans-serif;">
+        ⚡ PIDE POR WHATSAPP Y RECOGE EN TIENDA
+      </h3>
+      <p class="text-stone-300 text-sm md:text-base">
+        Escríbenos directamente indicando tu pedido para tenerlo listo a tu llegada al local.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ubicación y Horarios -->
+  <section id="ubicacion" class="py-20 bg-stone-950 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div>
+          <span class="text-red-500 font-extrabold text-xs uppercase tracking-widest">Visítanos en Lurín</span>
+          <h3 class="text-3xl md:text-4xl font-black text-white mt-1" style="font-family: 'Outfit', sans-serif;">
+            UBICACIÓN & HORARIOS
+          </h3>
+        </div>
+
+        <div class="bg-stone-900 p-6 rounded-3xl border border-stone-800 space-y-5 shadow-xl">
+          <div class="flex items-start gap-4">
+            <div class="bg-red-950 border border-red-800 p-3 rounded-2xl text-red-500 text-xl">
+              📍
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-base">Dirección del Local</h4>
+              <p class="text-stone-400 text-sm mt-0.5">Visítanos para retirar tus pedidos directamente en tienda.</p>
+              <a 
+                href="https://maps.app.goo.gl/ppSDfpeFZWSVJvb38" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs font-bold text-amber-400 hover:underline mt-2"
+              >
+                <span>Abrir en la App de Google Maps</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="border-t border-stone-800 pt-4 flex items-start gap-4">
+            <div class="bg-amber-950 border border-amber-800 p-3 rounded-2xl text-amber-400 text-xl">
+              ⏰
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-base">Horario de Atención</h4>
+              <p class="text-stone-400 text-sm mt-0.5">Lunes a Domingo: <strong class="text-white">12:00 PM – 10:00 PM</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa interactivo de Google Maps -->
+      <div class="w-full h-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl border border-stone-800 relative">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!4v1792947434508!6m8!1m7!1sFO_Tgaq_OGooRkP3BG7WSg!2m2!1d-12.2896005823331!2d-76.85356157095552!3f260.37!4f-41.46!5f0.7820865974627469" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página comercial -->
+  <footer class="bg-stone-900/40 text-stone-400 py-12 px-4 text-center text-sm border-t border-stone-800">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <h4 class="font-black text-2xl text-white tracking-tight" style="font-family: 'Outfit', sans-serif;">
+        🔥 POLLERÍA EL SABOR
+      </h4>
+      <p class="text-stone-400 text-xs max-w-md mx-auto">
+        Atención exclusiva para recojo en local. Pide tus platos por WhatsApp y recógelos calentitos.
+      </p>
+      <div class="border-t border-stone-800/80 pt-6 text-xs text-stone-500">
+        © {new Date().getFullYear()} Pollería El Sabor. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN 2 DE WHATSAPP (Flotante) -->
+  <a 
+    href={`https://wa.me/${phoneWhatsApp}?text=${encodeURIComponent('¡Hola! Quisiera realizar un pedido para recoger en tienda.')}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white py-3.5 px-6 rounded-full shadow-2xl shadow-emerald-950/80 transition-all duration-300 hover:scale-105 z-50 flex items-center gap-3 border border-white/20 group"
+    aria-label="Pedir por WhatsApp"
+  >
+    <svg class="w-7 h-7 fill-current text-white" viewBox="0 0 24 24">
+      <path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.479 1.332 5.006l-1.417 5.176 5.292-1.388c1.472.802 3.136 1.226 4.786 1.226 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm0 18.293c-1.488 0-2.946-.401-4.221-1.158l-.303-.18-3.137.822.837-3.059-.197-.314c-.833-1.326-1.273-2.868-1.273-4.45 0-4.542 3.695-8.238 8.238-8.238 4.543 0 8.238 3.696 8.238 8.238 0 4.543-3.695 8.239-8.239 8.239z"/>
+    </svg>
+    <div class="flex flex-col text-left">
+      <span class="text-[10px] font-black uppercase text-emerald-100 tracking-wider leading-none">Pedir para llevar</span>
+      <span class="text-sm font-extrabold leading-tight">WhatsApp</span>
+    </div>
+  </a>
+</Layout>
