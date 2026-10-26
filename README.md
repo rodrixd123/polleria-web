@@ -73,6 +73,7 @@ Para personalizar los datos antes del despliegue final:
 - **Platos y Precios:** Actualizar el arreglo `menuData` en `src/data/menu.ts`.
 - **Imágenes:** Reemplazar o añadir los archivos dentro de la carpeta `public/images/`.
 
+Link Pagina: https://polleria-web.vercel.app/#carta
 ---
 
 © Pollería El Sabor — Todos los derechos reservados.
